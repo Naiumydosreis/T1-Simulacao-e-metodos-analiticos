@@ -1,0 +1,83 @@
+RESULTADOS DA SIMULAÇÃO - VALIDAÇÃO
+=====================================
+
+Modelo: modelo_exemplo.yml
+Configuração: 3 filas (G/G/1, G/G/2/5, G/G/2/10)
+Números aleatórios utilizados: 100.000
+Primeiro cliente: t = 2.0
+Tempo global da simulação: 41.251,91 unidades de tempo
+
+FILA 1 (G/G/1 - 1 servidor, capacidade infinita)
+================================================
+Perdas de clientes: 0
+Distribuição de Probabilidade dos Estados:
+- P1(0) = 0.3244 (32,44% do tempo vazia)
+- P1(1) = 0.5270 (52,70% do tempo com 1 cliente)
+- P1(2) = 0.1368 (13,68% do tempo com 2 clientes)
+- P1(3) = 0.0116 (1,16% do tempo com 3 clientes)
+- P1(4) = 0.0002 (0,02% do tempo com 4 clientes)
+- P1(5) = 0.0000 (0,00% do tempo com 5 clientes)
+
+Tempos Acumulados por Estado:
+- Estado 0: 13.382,05 unidades de tempo
+- Estado 1: 21.740,85 unidades de tempo
+- Estado 2: 5.642,80 unidades de tempo
+- Estado 3: 476,75 unidades de tempo
+- Estado 4: 9,39 unidades de tempo
+- Estado 5: 0,06 unidades de tempo
+
+FILA 2 (G/G/2/5 - 2 servidores, capacidade 5)
+==============================================
+Perdas de clientes: 4.270
+Distribuição de Probabilidade dos Estados:
+- P2(0) = 0.0020 (0,20% do tempo vazia)
+- P2(1) = 0.0148 (1,48% do tempo com 1 cliente)
+- P2(2) = 0.0618 (6,18% do tempo com 2 clientes)
+- P2(3) = 0.2185 (21,85% do tempo com 3 clientes)
+- P2(4) = 0.3987 (39,87% do tempo com 4 clientes)
+- P2(5) = 0.3042 (30,42% do tempo com 5 clientes - capacidade máxima)
+
+Tempos Acumulados por Estado:
+- Estado 0: 82,60 unidades de tempo
+- Estado 1: 611,65 unidades de tempo
+- Estado 2: 2.548,70 unidades de tempo
+- Estado 3: 9.012,94 unidades de tempo
+- Estado 4: 16.447,21 unidades de tempo
+- Estado 5: 12.548,82 unidades de tempo
+
+FILA 3 (G/G/2/10 - 2 servidores, capacidade 10)
+================================================
+Perdas de clientes: 3.739
+Distribuição de Probabilidade dos Estados:
+- P3(0) = 0.0002 (0,02% do tempo vazia)
+- P3(1) = 0.0001 (0,01% do tempo com 1 cliente)
+- P3(2) = 0.0006 (0,06% do tempo com 2 clientes)
+- P3(3) = 0.0015 (0,15% do tempo com 3 clientes)
+- P3(4) = 0.0022 (0,22% do tempo com 4 clientes)
+- P3(5) = 0.0053 (0,53% do tempo com 5 clientes)
+- P3(6) = 0.0162 (1,62% do tempo com 6 clientes)
+- P3(7) = 0.0517 (5,17% do tempo com 7 clientes)
+- P3(8) = 0.1708 (17,08% do tempo com 8 clientes)
+- P3(9) = 0.3658 (36,58% do tempo com 9 clientes)
+- P3(10) = 0.3856 (38,56% do tempo com 10 clientes - capacidade máxima)
+
+Tempos Acumulados por Estado:
+- Estado 0: 7,53 unidades de tempo
+- Estado 1: 2,23 unidades de tempo
+- Estado 2: 26,42 unidades de tempo
+- Estado 3: 62,61 unidades de tempo
+- Estado 4: 91,15 unidades de tempo
+- Estado 5: 218,95 unidades de tempo
+- Estado 6: 669,99 unidades de tempo
+- Estado 7: 2.131,12 unidades de tempo
+- Estado 8: 7.047,27 unidades de tempo
+- Estado 9: 15.088,43 unidades de tempo
+- Estado 10: 15.906,21 unidades de tempo
+
+OBSERVAÇÕES
+===========
+1. A Fila 1 (capacidade infinita) não apresentou perdas, como esperado.
+2. As Filas 2 e 3 apresentaram perdas significativas devido às suas capacidades limitadas.
+3. A Fila 3 opera próxima à capacidade máxima na maior parte do tempo.
+4. O roteamento probabilístico está funcionando conforme especificado (probabilidades somando 1).
+5. A simulação utilizou exatamente 100.000 números aleatórios conforme solicitado.

@@ -1,0 +1,44 @@
+# Configuração do modelo de rede de filas
+# Baseado no diagrama fornecido com 3 filas (G/G/1, G/G/2/5, G/G/2/10)
+
+general:
+  seed: 42
+  description: "Modelo de rede com 3 filas conforme especificação"
+  num_random: 100000
+  first_arrival: 2.0
+
+arrivals:
+  fila1:
+    enabled: true
+    start: 2.0
+    min: 2.0
+    max: 4.0
+
+queues:
+  fila1:
+    servers: 1
+    capacity: .inf
+    service_min: 1.0
+    service_max: 2.0
+    routing:
+      fila2: 0.8
+      fila3: 0.2
+      
+  fila2:
+    servers: 2
+    capacity: 5
+    service_min: 4.0
+    service_max: 6.0
+    routing:
+      exit: 0.2
+      fila1: 0.3
+      fila3: 0.5
+      
+  fila3:
+    servers: 2
+    capacity: 10
+    service_min: 5.0
+    service_max: 15.0
+    routing:
+      exit: 0.3
+      fila2: 0.7
